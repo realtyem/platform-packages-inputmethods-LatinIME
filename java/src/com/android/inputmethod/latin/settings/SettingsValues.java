@@ -169,7 +169,7 @@ public class SettingsValues {
         mKeypressSoundVolume = Settings.readKeypressSoundVolume(prefs, res);
         mKeyPreviewPopupDismissDelay = Settings.readKeyPreviewPopupDismissDelay(prefs, res);
         mEnableEmojiAltPhysicalKey = prefs.getBoolean(
-                Settings.PREF_ENABLE_EMOJI_ALT_PHYSICAL_KEY, true);
+                Settings.PREF_ENABLE_EMOJI_ALT_PHYSICAL_KEY, false);
         mShowAppIcon = Settings.readShowSetupWizardIcon(prefs, context);
         mIsShowAppIconSettingInPreferences = prefs.contains(Settings.PREF_SHOW_SETUP_WIZARD_ICON);
         mAutoCorrectionThreshold = readAutoCorrectionThreshold(res,
