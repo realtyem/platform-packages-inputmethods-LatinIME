@@ -79,15 +79,15 @@ final class EmojiAltPhysicalKeyDetector {
      * @param keyEvent an up key event.
      */
     public void onKeyUp(@Nonnull final KeyEvent keyEvent) {
-        Log.d(TAG, "onKeyUp() : " + keyEvent);
+        //Log.d(TAG, "onKeyUp() : " + keyEvent);
         if (!Settings.getInstance().getCurrent().mEnableEmojiAltPhysicalKey) {
             // The feature is disabled.
-            Log.d(TAG, "onKeyUp() : Disabled");
+         //   Log.d(TAG, "onKeyUp() : Disabled");
             return;
         }
         if (keyEvent.isCanceled()) {
             // This key up event was a part of key combinations and should be ignored.
-            Log.d(TAG, "onKeyUp() : Canceled");
+          //  Log.d(TAG, "onKeyUp() : Canceled");
             return;
         }
         final Integer mappedModifier = getMappedModifier(keyEvent);
@@ -101,13 +101,13 @@ final class EmojiAltPhysicalKeyDetector {
         final int keyCode = keyEvent.getKeyCode();
         if (mActiveModifiers.contains(keyCode)) {
             // Used as a modifier, not a standalone key press.
-            Log.d(TAG, "onKeyUp() : Used as Modifier: " + keyCode);
+        //    Log.d(TAG, "onKeyUp() : Used as Modifier: " + keyCode);
             mActiveModifiers.remove(keyCode);
             return;
         }
         if (!isMappedKeyCode(keyEvent)) {
             // Nothing special about this key.
-            Log.d(TAG, "onKeyUp() : Not Mapped: " + keyCode);
+         //   Log.d(TAG, "onKeyUp() : Not Mapped: " + keyCode);
             return;
         }
         final KeyboardSwitcher switcher = KeyboardSwitcher.getInstance();
